@@ -1,0 +1,52 @@
+<!-- <h2>Products</h2> -->
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th class="col"><h2>Product Name</h2></th>
+      <th class="col"><h2>Product Description</h2></th>
+      <th class="col"><h2>Share</h2></th>
+      <th class="col"><h2>Notify</h2></th>
+      <th class="col"><h2>Edit</h2></th>
+      <!-- <th class="col"><h2>Delete</h2></th> -->
+    </tr>
+  </thead>
+  <tbody *ngFor="let product of productList">
+    <tr>
+      <td>
+        <h3>
+          <a
+            [title]="product.name + ' details'"
+            [routerLink]="['/products', product.id]"
+            >{{ product.name }}</a
+          >
+          <!-- <a href="" title="link tooltip">{{ product.name }}</a> -->
+        </h3>
+      </td>
+      <!-- *ngIf="product.description" -->
+      <td>
+        {{ product.description }}
+      </td>
+      <td>
+        <button type="button" (click)="share()">Share</button>
+      </td>
+      <td>
+        <app-product-alerts
+          [product]="product"
+          (notify)="onNotify()"
+        ></app-product-alerts>
+      </td>
+      <td>
+        <a [routerLink]="['/products/edit', product.id]">
+          <!-- (click)="edit()" -->
+          <button type="button">Edit</button>
+        </a>
+      </td>
+      <!-- <td>
+        <button type="button" (click)="delete()">Delete</button>
+      </td> -->
+    </tr>
+  </tbody>
+
+  <!-- <p *ngIf="product.price > 700">Notify Me</p> -->
+</table>

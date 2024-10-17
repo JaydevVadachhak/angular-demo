@@ -1,0 +1,26 @@
+h2 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.form-container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .form-control {
+    width: 400px;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .btn {
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1;
+    margin-left: 10px;
+    padding: 10px;
+  }
+}

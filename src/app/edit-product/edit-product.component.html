@@ -1,0 +1,38 @@
+<h2>Edit Product</h2>
+
+<form action="" class="form-container" (ngSubmit)="editProduct()">
+  <!-- <label for="Product Name" class="form-label">Product Name</label> -->
+  <input
+    type="number"
+    class="form-control"
+    placeholder="Enter Product Id"
+    name="id"
+    [(ngModel)]="productList.id"
+    required
+  />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Enter Product Name"
+    name="name"
+    [(ngModel)]="productList.name"
+    required
+  />
+  <textarea
+    class="form-control"
+    aria-label="With textarea"
+    rows="8"
+    placeholder="Enter Product Description"
+    name="description"
+    [(ngModel)]="productList.description"
+  ></textarea>
+  <input
+    type="number"
+    class="form-control"
+    required
+    placeholder="Enter Product Price"
+    name="price"
+    [(ngModel)]="productList.price"
+  />
+  <button type="submit" class="btn btn-primary">Edit</button>
+</form>

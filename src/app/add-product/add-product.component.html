@@ -1,0 +1,42 @@
+<h2>Add Product</h2>
+
+<form #productForm="ngForm" class="form-container" (ngSubmit)="addProduct()">
+  <!-- <label for="Product Name" class="form-label">Product Name</label> -->
+  <pre>
+      {{ productForm.value | json }}
+  </pre>
+  <!-- ngModelGroup="product" -->
+  <input
+    type="number"
+    class="form-control"
+    placeholder="Enter Product Id"
+    name="productId"
+    [(ngModel)]="productId"
+    required
+  />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Enter Product Name"
+    name="productName"
+    [(ngModel)]="productName"
+    required
+  />
+  <textarea
+    class="form-control"
+    aria-label="With textarea"
+    rows="8"
+    placeholder="Enter Product Description"
+    name="productDescription"
+    [(ngModel)]="productDescription"
+  ></textarea>
+  <input
+    type="number"
+    class="form-control"
+    required
+    placeholder="Enter Product Price"
+    name="productPrice"
+    [(ngModel)]="productPrice"
+  />
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
